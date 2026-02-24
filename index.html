@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adwaith Santhosh — AI Student & Builder</title>
+    <meta name="description"
+        content="Adwaith Santhosh — AI student, Gen-AI enthusiast & tech stack builder. I build things where other people stop thinking." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Background Orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <span class="logo-dot"></span>
+            <span class="logo-text">AS</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link" data-hover="Home">Home</a></li>
+            <li><a href="#about" class="nav-link" data-hover="About">About</a></li>
+            <li><a href="#skills" class="nav-link" data-hover="Skills">Skills</a></li>
+            <li><a href="#projects" class="nav-link" data-hover="Projects">Projects</a></li>
+            <li><a href="#contact" class="nav-link" data-hover="Contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#home" class="mobile-link">Home</a></li>
+            <li><a href="#about" class="mobile-link">About</a></li>
+            <li><a href="#skills" class="mobile-link">Skills</a></li>
+            <li><a href="#projects" class="mobile-link">Projects</a></li>
+            <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-badge reveal-up">
+                <span class="badge-dot"></span>
+                Open to collaborations & internships
+            </div>
+            <h1 class="hero-title reveal-up">
+                <span class="title-line">Hey, I'm</span>
+                <span class="title-line gradient-text">Adwaith Santhosh</span>
+            </h1>
+            <p class="hero-role reveal-up">
+                <span class="role-item active" id="role-text">AI Student</span>
+            </p>
+            <p class="hero-desc reveal-up">
+                CSE &amp; AI student at Amrita Vishwa Vidyapeetham. I build things where other people stop thinking
+                &mdash; AI agents, Gen-AI systems, and full-stack automation tools.
+            </p>
+            <div class="hero-actions reveal-up">
+                <a href="#projects" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+            </div>
+            <div class="hero-stats reveal-up">
+                <div class="stat">
+                    <span class="stat-number" data-count="10">0</span><span>+</span>
+                    <span class="stat-label">Projects Built</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="2">0</span><span>+</span>
+                    <span class="stat-label">Years Coding</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="1">0</span><span></span>
+                    <span class="stat-label">Active Internship</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual reveal-right">
+            <div class="hero-avatar-wrapper">
+                <div class="hero-avatar">
+                    <img src="profile.jpg" alt="Adwaith Santhosh" class="avatar-photo" />
+                </div>
+                <div class="hero-float-card card-1">
+                    <span class="float-icon">🤖</span>
+                    <span>AI &amp; Gen-AI</span>
+                </div>
+                <div class="hero-float-card card-2">
+                    <span class="float-icon">⚙️</span>
+                    <span>Backend Builder</span>
+                </div>
+                <div class="hero-float-card card-3">
+                    <span class="float-icon">🚀</span>
+                    <span>Automation-First</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">About Me</span>
+                <h2 class="section-title reveal-up">A Little Bit <span class="gradient-text">About Adwaith</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-image-wrapper reveal-left">
+                    <div class="about-image-frame">
+                        <div class="about-image-placeholder">
+                            <svg viewBox="0 0 200 260" fill="none">
+                                <rect width="200" height="260" rx="20" fill="rgba(139,92,246,0.1)" />
+                                <circle cx="100" cy="90" r="45" fill="rgba(139,92,246,0.25)"
+                                    stroke="rgba(139,92,246,0.5)" stroke-width="2" />
+                                <path d="M20 220 Q30 155 100 155 Q170 155 180 220" fill="rgba(139,92,246,0.25)"
+                                    stroke="rgba(139,92,246,0.5)" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+                <div class="about-content reveal-right">
+                    <h3 class="about-heading">Building things where others <span class="gradient-text">stop
+                            thinking</span></h3>
+                    <p class="about-text">
+                        I'm currently a 2nd year B.Tech student at Amrita University. I enjoy working on AI agents,
+                        Gen-AI production, backend tech stacks, and front-end design. My focus: building projects that
+                        automate basic human tasks that barely need a human's presence.
+                    </p>
+                    <p class="about-text">
+                        Currently interning at the <strong>Centre for Internet Studies and Artificial Intelligence
+                            (CISAI), Amritapuri</strong> &mdash; where I push the limits of what AI can do in real-world
+                        systems.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🎓</span>
+                            <div>
+                                <strong>Education</strong>
+                                <span>B.Tech CSE + AI — Amrita Vishwa Vidyapeetham</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🌍</span>
+                            <div>
+                                <strong>Location</strong>
+                                <span>Amritapuri, Kerala, India</span>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">💼</span>
+                            <div>
+                                <strong>Status</strong>
+                                <span>Intern @ CISAI, Amritapuri</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn btn-primary" id="downloadCV">
+                        <span>Get In Touch</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">My Stack</span>
+                <h2 class="section-title reveal-up">Skills & <span class="gradient-text">Technologies</span></h2>
+            </div>
+            <div class="skills-categories">
+
+                <!-- Languages -->
+                <div class="skill-cat-card reveal-up" data-delay="0">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon">🐍</span>
+                        <h3 class="skill-cat-title">Languages</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-row"><span class="skill-row-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="60"></div>
+                            </div><span class="skill-row-score">3/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">HTML</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div><span class="skill-row-score">3.5/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">C</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="60"></div>
+                            </div><span class="skill-row-score">3/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI & Data Science -->
+                <div class="skill-cat-card reveal-up" data-delay="80">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon">🤖</span>
+                        <h3 class="skill-cat-title">AI &amp; Data Science</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-row"><span class="skill-row-name">NumPy</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div><span class="skill-row-score">3.5/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Pandas</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div><span class="skill-row-score">3.5/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">OpenCV</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="60"></div>
+                            </div><span class="skill-row-score">3/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">ML Fundamentals</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Deep Learning</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="60"></div>
+                            </div><span class="skill-row-score">3/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Gen-AI / LLM Workflows</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">AI Agents / Task Automation</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Prompt Engineering</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web & Backend -->
+                <div class="skill-cat-card reveal-up" data-delay="160">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon">🌐</span>
+                        <h3 class="skill-cat-title">Web &amp; Backend</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-row"><span class="skill-row-name">REST API Concepts</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div><span class="skill-row-score">3.5/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Backend Development</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div><span class="skill-row-score">3.5/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Responsive Web Design</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="60"></div>
+                            </div><span class="skill-row-score">3/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Frontend Structuring</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div><span class="skill-row-score">3.5/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Git</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">GitHub</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hardware -->
+                <div class="skill-cat-card reveal-up" data-delay="240">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon">⚡</span>
+                        <h3 class="skill-cat-title">Hardware &amp; Electronics</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-row"><span class="skill-row-name">ESP32 / Microcontrollers</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div><span class="skill-row-score">3.5/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Basic Electronics / Circuits</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70"></div>
+                            </div><span class="skill-row-score">3.5/5</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Strengths -->
+                <div class="skill-cat-card reveal-up" data-delay="320" style="--cat-accent: #06b6d4;">
+                    <div class="skill-cat-header">
+                        <span class="skill-cat-icon">🧠</span>
+                        <h3 class="skill-cat-title">Core Strengths</h3>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-row"><span class="skill-row-name">Problem Solving / Logic Building</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                        <div class="skill-row"><span class="skill-row-name">Debugging &amp; Iterative Dev</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80"></div>
+                            </div><span class="skill-row-score">4/5</span>
+                        </div>
+                        <div class="skill-row top-skill"><span class="skill-row-name">Technical Self-Learning ⭐</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="100"></div>
+                            </div><span class="skill-row-score">5/5</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">My Work</span>
+                <h2 class="section-title reveal-up">Featured <span class="gradient-text">Projects</span></h2>
+            </div>
+            <div class="projects-grid">
+
+                <!-- Featured: Deep-Fake Detection / Generation -->
+                <div class="project-card featured reveal-up" data-delay="0">
+                    <div class="project-image">
+                        <img src="cover-deepfake.png" alt="Deep-Fake Detection / Generation" class="project-cover-img" />
+                        <div class="project-overlay">
+                            <a href="https://github.com/adwaithsanthoshh/C_QUBE/tree/main/Tasks/Deep-Fake"
+                                target="_blank" class="project-link-btn" aria-label="Source Code">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">OpenCV</span>
+                        </div>
+                        <h3 class="project-title">Deep-Fake Detection / Generation</h3>
+                        <p class="project-desc">An AI-focused project exploring deep-fake methodologies and synthetic
+                            media manipulation. Involves computer vision techniques, model experimentation, and analysis
+                            of how neural networks generate or detect realistic forged visual content.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/adwaithsanthoshh/C_QUBE/tree/main/Tasks/Deep-Fake"
+                                target="_blank" class="link-text">Source Code <span>→</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Morphik-AI -->
+                <div class="project-card reveal-up" data-delay="100">
+                    <div class="project-image">
+                        <img src="cover-morphik.jpg" alt="Morphik-AI" class="project-cover-img" />
+                        <div class="project-overlay">
+                            <a href="https://github.com/adwaithsanthoshh/C_QUBE/tree/main/Tasks/Morphik-Ai"
+                                target="_blank" class="project-link-btn" aria-label="Source Code">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Gen-AI</span>
+                            <span class="tag">LLM</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <h3 class="project-title">Morphik-AI</h3>
+                        <p class="project-desc">A generative AI experiment centered on transformation and intelligent
+                            data manipulation. Builds AI-driven workflows that modify or enhance inputs dynamically
+                            using modern ML and inference strategies.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/adwaithsanthoshh/C_QUBE/tree/main/Tasks/Morphik-Ai"
+                                target="_blank" class="link-text">Source Code <span>→</span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice Clone-AI -->
+                <div class="project-card reveal-up" data-delay="200">
+                    <div class="project-image">
+                        <img src="cover-voiceclone.jpg" alt="Voice Clone-AI" class="project-cover-img" />
+                        <div class="project-overlay">
+                            <a href="https://github.com/adwaithsanthoshh/C_QUBE/tree/main/Tasks/Voice%20Clone-Ai"
+                                target="_blank" class="project-link-btn" aria-label="Source Code">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">ML</span>
+                            <span class="tag">Audio AI</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <h3 class="project-title">Voice Clone-AI</h3>
+                        <p class="project-desc">A machine learning project investigating voice synthesis and cloning
+                            techniques. Works with audio processing, speech models, and neural generation to replicate
+                            human-like vocal characteristics through AI.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/adwaithsanthoshh/C_QUBE/tree/main/Tasks/Voice%20Clone-Ai"
+                                target="_blank" class="link-text">Source Code <span>→</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        <div class="projects-cta reveal-up">
+            <a href="#" class="btn btn-ghost">
+                View All Projects
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag reveal-up">Get In Touch</span>
+                <h2 class="section-title reveal-up">Let's Work <span class="gradient-text">Together</span></h2>
+                <p class="section-subtitle reveal-up">Have a project in mind? I'd love to hear about it. Drop me a
+                    message and let's make something amazing.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info reveal-left">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:adwaithsanthosh80@gmail.com">adwaithsanthosh80@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Location</strong>
+                            <span>Amritapuri, Kerala, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <div>
+                            <strong>Availability</strong>
+                            <span>Mon – Fri, 9am – 6pm</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-btn" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-btn" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form reveal-right" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Project Collaboration" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary full-width" id="submitBtn">
+                        <span>Send Message</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-dot"></span>
+                    <span class="logo-text">AS</span>
+                </div>
+                <p class="footer-tagline">I build things where other people stop thinking.</p>
+                <p class="footer-copy">© <span id="year"></span> Adwaith Santhosh · adwaiths06 · Built with ❤️ and lots
+                    of ☕</p>
+            </div>
+            <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 15l-6-6-6 6" />
+                </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
