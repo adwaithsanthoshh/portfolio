@@ -1,0 +1,274 @@
+:root {
+
+    --bg: #FAF8F4;
+    --card: #FFFFFF;
+
+    --accent: #C8B38A;
+
+    --text: #111111;
+
+    --muted: #666666;
+
+    --shadow: 0 15px 40px rgba(0, 0, 0, .08);
+
+    --radius: 22px;
+
+    --font: 'IBM Plex Mono', monospace;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family: var(--font);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+}
+
+.sending-page {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+.card {
+
+    width: min(750px, 95%);
+
+    background: var(--card);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    padding: 60px;
+
+    text-align: center;
+
+}
+
+h1 {
+
+    font-size: 2.3rem;
+
+    margin-bottom: 15px;
+
+}
+
+.subtitle {
+
+    color: var(--muted);
+
+    margin-bottom: 55px;
+
+    line-height: 1.6;
+
+}
+
+.animation-area {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 60px;
+
+}
+
+.device {
+
+    width: 130px;
+
+}
+
+.device span {
+
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: .95rem;
+
+}
+
+.emoji {
+
+    font-size: 5rem;
+
+}
+
+.flight-area {
+
+    flex: 1;
+
+    height: 90px;
+
+    position: relative;
+
+    border-bottom: 2px dashed var(--accent);
+
+}
+
+.plane {
+
+    position: absolute;
+
+    left: 0;
+
+    top: -18px;
+
+    font-size: 2.2rem;
+
+    animation: fly 2.8s linear infinite;
+
+}
+
+@keyframes fly {
+
+    0% {
+
+        left: 0;
+
+        transform: rotate(-10deg);
+
+    }
+
+    50% {
+
+        transform: translateY(-15px) rotate(8deg);
+
+    }
+
+    100% {
+
+        left: calc(100% - 35px);
+
+        transform: rotate(-5deg);
+
+    }
+
+}
+
+.status {
+
+    margin-top: 10px;
+
+}
+
+#statusText {
+
+    font-size: 1.1rem;
+
+    margin-bottom: 22px;
+
+    font-weight: 600;
+
+}
+
+.progress {
+
+    width: 100%;
+
+    height: 12px;
+
+    border-radius: 100px;
+
+    overflow: hidden;
+
+    background: #ece7de;
+
+}
+
+.progress-fill {
+
+    width: 0;
+
+    height: 100%;
+
+    background: var(--accent);
+
+    transition: width .3s linear;
+
+}
+
+.fadeOut {
+
+    animation: fadeOut .8s forwards;
+
+}
+
+@keyframes fadeOut {
+
+    from {
+
+        opacity: 1;
+
+    }
+
+    to {
+
+        opacity: 0;
+
+    }
+
+}
+
+@media(max-width:700px) {
+
+    .card {
+
+        padding: 35px 20px;
+
+    }
+
+    .animation-area {
+
+        flex-direction: column;
+
+        gap: 25px;
+
+    }
+
+    .flight-area {
+
+        width: 100%;
+
+    }
+
+    .emoji {
+
+        font-size: 4rem;
+
+    }
+
+}

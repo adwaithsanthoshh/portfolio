@@ -4,7 +4,7 @@
    ===================================================== */
 
 // ──────────────────────────────────────────────────────
-//  FIRE CURSOR & PARTICLE SYSTEM
+//  SPATIAL ORB CURSOR & PARTICLE SYSTEM
 // ──────────────────────────────────────────────────────
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursor-follower');
@@ -14,41 +14,44 @@ let followerX = 0, followerY = 0;
 let isMouseDown = false;
 let lastSpawnX = 0, lastSpawnY = 0;
 
-// Fire color palette
-const fireColors = [
-    '#ff2200', '#ff4400', '#ff6600', '#ff8800',
-    '#ffaa00', '#ffcc00', '#fff0a0', '#ff3300'
+// Spatial pastel color palette
+const spatialColors = [
+    'rgba(79, 70, 229, 0.35)',  // Indigo
+    'rgba(124, 58, 237, 0.3)',  // Violet
+    'rgba(59, 130, 246, 0.3)',  // Blue
+    'rgba(147, 51, 234, 0.25)', // Purple
+    'rgba(249, 115, 22, 0.2)'   // Orange glow
 ];
 
-function spawnFireParticle(x, y, isBurst = false) {
+function spawnSpatialParticle(x, y, isBurst = false) {
     const p = document.createElement('div');
     const size = isBurst
-        ? (Math.random() * 18 + 8)
-        : (Math.random() * 10 + 4);
-    const color = fireColors[Math.floor(Math.random() * fireColors.length)];
+        ? (Math.random() * 16 + 10)
+        : (Math.random() * 8 + 4);
+    const color = spatialColors[Math.floor(Math.random() * spatialColors.length)];
     const angle = isBurst
         ? (Math.random() * Math.PI * 2)
-        : (Math.random() * Math.PI - Math.PI * 1.3); // mostly upward
+        : (Math.random() * Math.PI * 2); // Float in any direction
     const speed = isBurst
-        ? (Math.random() * 80 + 30)
-        : (Math.random() * 40 + 15);
+        ? (Math.random() * 90 + 30)
+        : (Math.random() * 35 + 10);
     const vx = Math.cos(angle) * speed;
-    const vy = Math.sin(angle) * speed - (isBurst ? 0 : 30);
-    const life = isBurst ? (Math.random() * 500 + 300) : (Math.random() * 350 + 150);
+    const vy = Math.sin(angle) * speed - (isBurst ? 0 : 10); // slightly upward float
+    const life = isBurst ? (Math.random() * 600 + 400) : (Math.random() * 400 + 200);
 
     p.style.cssText = `
         position: fixed;
         left: ${x}px;
         top: ${y}px;
         width: ${size}px;
-        height: ${size * 1.4}px;
-        border-radius: 50% 50% 30% 30%;
-        background: radial-gradient(ellipse at center bottom, #fff8a0 0%, ${color} 50%, transparent 100%);
+        height: ${size}px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.9) 0%, ${color} 70%, transparent 100%);
         pointer-events: none;
         z-index: 99999;
         transform: translate(-50%, -50%);
-        filter: blur(${isBurst ? 1 : 0.5}px);
-        mix-blend-mode: screen;
+        filter: blur(${isBurst ? 0.5 : 0.2}px);
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
     `;
     document.body.appendChild(p);
 
@@ -59,15 +62,15 @@ function spawnFireParticle(x, y, isBurst = false) {
         const elapsed = now - start;
         const progress = elapsed / life;
         if (progress >= 1) { p.remove(); return; }
-        const friction = 0.97;
+        const friction = 0.96;
         px += vx * (1 / 60) * Math.pow(friction, elapsed / 16);
-        py += vy * (1 / 60) * Math.pow(friction, elapsed / 16) + (isBurst ? 0.3 : -0.1);
+        py += vy * (1 / 60) * Math.pow(friction, elapsed / 16) - 0.25; // slowly rise
         const opacity = 1 - progress;
-        const scale = isBurst ? (1 - progress * 0.5) : (0.5 + progress * 0.5);
+        const scale = isBurst ? (1 - progress * 0.7) : (0.7 + progress * 0.5);
         p.style.left = px + 'px';
         p.style.top = py + 'px';
         p.style.opacity = opacity;
-        p.style.transform = `translate(-50%, -50%) scale(${scale}) rotate(${progress * 180}deg)`;
+        p.style.transform = `translate(-50%, -50%) scale(${scale})`;
         requestAnimationFrame(animate);
     }
     requestAnimationFrame(animate);
@@ -85,9 +88,9 @@ document.addEventListener('mousemove', (e) => {
     const dist = Math.sqrt(dx * dx + dy * dy);
     const threshold = isMouseDown ? 6 : 12;
     if (dist > threshold) {
-        const count = isMouseDown ? 4 : 2;
+        const count = isMouseDown ? 4 : 1;
         for (let i = 0; i < count; i++) {
-            spawnFireParticle(
+            spawnSpatialParticle(
                 mouseX + (Math.random() - 0.5) * 8,
                 mouseY + (Math.random() - 0.5) * 8,
                 false
@@ -102,8 +105,8 @@ document.addEventListener('mousemove', (e) => {
 document.addEventListener('mousedown', (e) => {
     isMouseDown = true;
     document.body.classList.add('cursor-click');
-    for (let i = 0; i < 18; i++) {
-        spawnFireParticle(
+    for (let i = 0; i < 15; i++) {
+        spawnSpatialParticle(
             e.clientX + (Math.random() - 0.5) * 10,
             e.clientY + (Math.random() - 0.5) * 10,
             true
@@ -176,37 +179,60 @@ const navObserver = new IntersectionObserver((entries) => {
 sections.forEach(s => navObserver.observe(s));
 
 // ──────────────────────────────────────────────────────
-//  TYPED TEXT EFFECT
+//  MULTI-LANGUAGE NAME TYPEWRITER EFFECT
 // ──────────────────────────────────────────────────────
-const roles = [
-    'AI Student @ Amrita',
-    'Gen-AI Builder',
-    'AI Agents & Automation',
-    'Backend Developer',
-    'Prompt Engineer'
+const nameText = document.getElementById('name-text');
+const nameList = [
+    'Adwaith Santhosh', // English
+    'അദ്വൈത് സന്തോഷ്',  // Malayalam
+    'अद्वैत सन्तोषः',    // Sanskrit
+    'अद्वैत संतोष',     // Hindi
+    'アドワイス・サントシュ', // Japanese
+    'Адвайт Сантош',    // Russian
+    'أدوايث سانتوش'     // Arabic
 ];
-let roleIdx = 0, charIdx = 0, deleting = false;
-const roleText = document.getElementById('role-text');
 
-function typeRole() {
-    const current = roles[roleIdx];
-    if (!deleting) {
-        roleText.textContent = current.slice(0, ++charIdx);
-        if (charIdx === current.length) {
-            deleting = true;
-            setTimeout(typeRole, 1800);
+let nameIdx = 0;
+let nameCharIdx = nameList[0].length;
+let nameDeleting = true; // Start by deleting English name after standard initial pause
+
+const typingSpeed = 100;      // 1 letter every second
+
+const deletingSpeed = 80;
+
+const pauseAfterTyping = 4000;
+
+const pauseAfterDeleting = 500;
+
+function typeName() {
+    if (!nameText) return;
+    const current = nameList[nameIdx];
+
+    if (!nameDeleting) {
+        nameText.textContent = current.slice(0, ++nameCharIdx);
+        if (nameCharIdx === current.length) {
+            nameDeleting = true;
+            setTimeout(typeName, 2200);
             return;
         }
     } else {
-        roleText.textContent = current.slice(0, --charIdx);
-        if (charIdx === 0) {
-            deleting = false;
-            roleIdx = (roleIdx + 1) % roles.length;
+        nameText.textContent = current.slice(0, --nameCharIdx);
+        if (nameCharIdx === 0) {
+            nameDeleting = false;
+            nameIdx = (nameIdx + 1) % nameList.length;
         }
     }
-    setTimeout(typeRole, deleting ? 50 : 90);
+    setTimeout(
+        typeName,
+        nameDeleting
+            ? deletingSpeed
+            : typingSpeed
+    );
 }
-setTimeout(typeRole, 1000);
+
+if (nameText) {
+    setTimeout(typeName, pauseAfterTyping);
+}
 
 // ──────────────────────────────────────────────────────
 //  SCROLL REVEAL ANIMATIONS
@@ -324,34 +350,32 @@ document.addEventListener('mousemove', (e) => {
 // ──────────────────────────────────────────────────────
 //  CONTACT FORM
 // ──────────────────────────────────────────────────────
-const contactForm = document.getElementById('contactForm');
+
 const submitBtn = document.getElementById('submitBtn');
+const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        submitBtn.innerHTML = `
-      <span>Sending…</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-           style="animation: spin 1s linear infinite; width:16px; height:16px;">
-        <circle cx="12" cy="12" r="10" stroke-dasharray="62.83" stroke-dashoffset="20"/>
-      </svg>`;
-        submitBtn.disabled = true;
 
-        setTimeout(() => {
-            submitBtn.innerHTML = `<span>Message Sent! 🎉</span>`;
-            submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-            contactForm.reset();
-            setTimeout(() => {
-                submitBtn.innerHTML = `<span>Send Message</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
-          </svg>`;
-                submitBtn.style.background = '';
-                submitBtn.disabled = false;
-            }, 3000);
-        }, 1800);
+    contactForm.addEventListener("submit", function (e) {
+
+        e.preventDefault();
+
+        const formData = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            subject: document.getElementById("subject").value,
+            message: document.getElementById("message").value
+        };
+
+        sessionStorage.setItem(
+            "contactFormData",
+            JSON.stringify(formData)
+        );
+
+        window.location.href = "sending.html";
+
     });
+
 }
 
 // ──────────────────────────────────────────────────────
@@ -396,7 +420,5 @@ styleSheet.textContent = `
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
   }
-  .nav-link.active { color: var(--text); }
-  .nav-link.active::after { left: 1rem; right: 1rem; }
 `;
 document.head.appendChild(styleSheet);

@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adwaith Santhosh — AI Student & Builder</title>
+    <title>Adwaith Santhosh</title>
     <meta name="description"
         content="Adwaith Santhosh — AI student, Gen-AI enthusiast & tech stack builder. I build things where other people stop thinking." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -33,10 +33,6 @@
 
     <!-- Navigation -->
     <nav class="nav" id="nav">
-        <div class="nav-logo">
-            <span class="logo-dot"></span>
-            <span class="logo-text">AS</span>
-        </div>
         <ul class="nav-links">
             <li><a href="#home" class="nav-link" data-hover="Home">Home</a></li>
             <li><a href="#about" class="nav-link" data-hover="About">About</a></li>
@@ -66,14 +62,24 @@
         <div class="hero-content">
             <div class="hero-badge reveal-up">
                 <span class="badge-dot"></span>
-                Open to collaborations & internships
+                ॐ
             </div>
-            <h1 class="hero-title reveal-up">
-                <span class="title-line">Hey, I'm</span>
-                <span class="title-line gradient-text">Adwaith Santhosh</span>
-            </h1>
+            <div class="hero-title reveal-up">
+
+                <div class="hero-greeting">
+                    Hey, I'm
+                </div>
+
+                <div class="hero-name">
+                    <span id="name-text" class="gradient-text">
+                        Adwaith Santhosh
+                    </span>
+                    <span class="typed-cursor">|</span>
+                </div>
+
+            </div>
             <p class="hero-role reveal-up">
-                <span class="role-item active" id="role-text">AI Student</span>
+                AI Student &amp; Builder
             </p>
             <p class="hero-desc reveal-up">
                 CSE &amp; AI student at Amrita Vishwa Vidyapeetham. I build things where other people stop thinking
@@ -105,25 +111,6 @@
                 </div>
             </div>
         </div>
-        <div class="hero-visual reveal-right">
-            <div class="hero-avatar-wrapper">
-                <div class="hero-avatar">
-                    <img src="profile.jpg" alt="Adwaith Santhosh" class="avatar-photo" />
-                </div>
-                <div class="hero-float-card card-1">
-                    <span class="float-icon">🤖</span>
-                    <span>AI &amp; Gen-AI</span>
-                </div>
-                <div class="hero-float-card card-2">
-                    <span class="float-icon">⚙️</span>
-                    <span>Backend Builder</span>
-                </div>
-                <div class="hero-float-card card-3">
-                    <span class="float-icon">🚀</span>
-                    <span>Automation-First</span>
-                </div>
-            </div>
-        </div>
         <div class="scroll-indicator">
             <div class="scroll-line"></div>
             <span>Scroll</span>
@@ -141,13 +128,8 @@
                 <div class="about-image-wrapper reveal-left">
                     <div class="about-image-frame">
                         <div class="about-image-placeholder">
-                            <svg viewBox="0 0 200 260" fill="none">
-                                <rect width="200" height="260" rx="20" fill="rgba(139,92,246,0.1)" />
-                                <circle cx="100" cy="90" r="45" fill="rgba(139,92,246,0.25)"
-                                    stroke="rgba(139,92,246,0.5)" stroke-width="2" />
-                                <path d="M20 220 Q30 155 100 155 Q170 155 180 220" fill="rgba(139,92,246,0.25)"
-                                    stroke="rgba(139,92,246,0.5)" stroke-width="2" />
-                            </svg>
+                            <img src="profile.jpg" alt="Adwaith Santhosh" class="avatar-photo"
+                                style="width: 100%; height: 100%; object-fit: cover; display: block;" />
                         </div>
                         <div class="image-decoration"></div>
                     </div>
@@ -394,7 +376,8 @@
                 <!-- Featured: Deep-Fake Detection / Generation -->
                 <div class="project-card featured reveal-up" data-delay="0">
                     <div class="project-image">
-                        <img src="cover-deepfake.png" alt="Deep-Fake Detection / Generation" class="project-cover-img" />
+                        <img src="cover-deepfake.png" alt="Deep-Fake Detection / Generation"
+                            class="project-cover-img" />
                         <div class="project-overlay">
                             <a href="https://github.com/adwaithsanthoshh/C_QUBE/tree/main/Tasks/Deep-Fake"
                                 target="_blank" class="project-link-btn" aria-label="Source Code">
@@ -486,14 +469,15 @@
                 </div>
 
             </div>
-        <div class="projects-cta reveal-up">
-            <a href="#" class="btn btn-ghost">
-                View All Projects
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-            </a>
-        </div>
+            <div class="projects-cta reveal-up">
+                <a href="https://github.com/adwaithsanthoshh" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-ghost">
+                    View All Projects
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -601,13 +585,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <span class="logo-dot"></span>
-                    <span class="logo-text">AS</span>
-                </div>
-                <p class="footer-tagline">I build things where other people stop thinking.</p>
-                <p class="footer-copy">© <span id="year"></span> Adwaith Santhosh · adwaiths06 · Built with ❤️ and lots
-                    of ☕</p>
+
+                <p class="footer-tagline">© Adwaith Santhosh ~ Built with lots of ~ 🫶🏻 ~</p>
+                <p class="footer-copy"> Last updated on 29 July 2026 </p>
             </div>
             <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
